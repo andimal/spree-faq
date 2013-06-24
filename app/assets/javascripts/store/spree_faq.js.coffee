@@ -1,6 +1,6 @@
-$ -> 
+$ ->
   $('.answer').hide()
-  $('.question').click -> 
+  $('.question').click ->
     id = $(this).attr('id').split('_')[1]
-    $('#answer_' + id).slideToggle()  
+    $('#answer_' + id).slideToggle()
     return false

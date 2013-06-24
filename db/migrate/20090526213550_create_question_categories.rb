@@ -1,5 +1,5 @@
 class CreateQuestionCategories < ActiveRecord::Migration
-  def self.up
+  def up
     create_table :spree_question_categories do |t|
       t.string  :name
       t.integer :position
@@ -8,7 +8,7 @@ class CreateQuestionCategories < ActiveRecord::Migration
     end
   end
 
-  def self.down
+  def down
     drop_table :spree_question_categories
   end
 end

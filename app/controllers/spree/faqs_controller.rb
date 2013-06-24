@@ -3,11 +3,11 @@ module Spree
 	  helper 'spree/products'
 
 	  def index
-	    @categories = Spree::QuestionCategory.all :include => :questions
+	    @categories = Spree::QuestionCategory.all(:include => :questions)
 	  end
 
 	  def default_title
-	    I18n.t 'frequently_asked_questions'
+	    Spree.t(:frequently_asked_questions)
 	  end
 	end
 end

@@ -1,4 +1,4 @@
-<h1><%= t('frequently_asked_questions') %></h1>
+<h1><%= Spree.t(:frequently_asked_questions) %></h1>
 
 <div id="faqs">
   <% @categories.each do |category| %>
@@ -18,12 +18,12 @@
       </ul>
     </div>
   <% end %>
-</div>   
+</div>
 
 <% content_for :sidebar do %>
-    <% if "products" == @current_controller && @taxon %>
-      <%= render "spree/shared/filters" %>
+    <% if 'products' == @current_controller && @taxon %>
+      <%= render 'spree/shared/filters' %>
     <% else %>
-      <%= render "spree/shared/taxonomies" %>
+      <%= render 'spree/shared/taxonomies' %>
     <% end %>
 <% end %>

@@ -1,0 +1,15 @@
+---
+sv:
+  spree:
+    add_question: "Lägg till fråga"
+    answer: Svar
+    back_to_categories: "Tillbaka till kategorier"
+    category_name: "Kategoriname"
+    create_category: "Skapa kategori"
+    editing_category_questions: "Ändra kategori frågor"
+    frequently_asked_questions: "Vanliga frågor och svar"
+    new_question_category: "Ny kategori"
+    question: Fråga
+    question_categories: "Vanliga frågor och svar"
+    question_categories_admin: FAQ
+    questions: Frågor

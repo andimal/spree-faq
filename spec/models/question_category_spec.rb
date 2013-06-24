@@ -1,38 +1,54 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe QuestionCategory do
-  before(:each) do
-    @valid_attributes = {
-      :name => "value for name",
-      :position => 1
-    }
+describe Spree::QuestionCategory do
+  let(:question_category) { create(:question_category) }
+  let(:valid_attributes)  { build(:question_category) }
+
+  subject { question_category }
+
+  context "instance attributes" do
+    it "create a new instance given valid attributes" do
+      pending "undefined method `stringify_keys'"
+      Spree::QuestionCategory.create! valid_attributes
+    end
   end
 
-  it "should create a new instance given valid attributes" do
-    QuestionCategory.create!(@valid_attributes)
+  context "factory" do
+    it "is valid" do
+      valid_attributes.valid?.should be_true, valid_attributes.errors.full_messages.join(',')
+    end
   end
 
-  it "should have questions" do
-    cat = QuestionCategory.create!(@valid_attributes)
-    cat.questions.should_not be_nil
+  context "relation" do
+    it { should have_many(:questions) }
+
+    it "have questions" do
+      subject.questions.should_not be_nil
+    end
   end
 
-  it "should require a name" do
-    category = QuestionCategory.create(@valid_attributes.except(:name))
-    category.should have(1).error_on(:name)
+  context "validation" do
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
+
+    it "is invalid without a name" do
+      build(:question_category, name: nil).should_not be_valid
+    end
   end
 
-  it "should act like a list" do
-    category = QuestionCategory.create(@valid_attributes.merge(:name => 'test'))
-    QuestionCategory.create(@valid_attributes)
-    
-    category.move_to_bottom
-    category.position.should eql(2)
+  context "mass asignment" do
+    it { should_not allow_mass_assignment_of(:updated_at) }
+    it { should_not allow_mass_assignment_of(:created_at) }
   end
 
-  it "should require a unique name" do
-    QuestionCategory.create(@valid_attributes)
-    category = QuestionCategory.create(@valid_attributes)
-    category.should have(1).error_on(:name)
+  context "acts as list" do
+    before do
+      2.times { create(:question_category) }
+    end
+
+    it "can have its position changed" do
+      subject.move_to_bottom
+      subject.position.should eq(3)
+    end
   end
 end

@@ -21,6 +21,7 @@ require File.expand_path('../dummy/config/environment.rb', __FILE__)
 
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'capybara/webkit'
 require 'ffaker'
 require 'database_cleaner'
 
@@ -31,7 +32,7 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 
-Dir[File.join(File.dirname(__FILE__), 'factories/*.rb')].each { |f| require f }
+FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.include Capybara::DSL, type: :request
@@ -57,4 +58,6 @@ RSpec.configure do |config|
   config.after do
     DatabaseCleaner.clean
   end
+
+  Capybara.javascript_driver = :webkit
 end

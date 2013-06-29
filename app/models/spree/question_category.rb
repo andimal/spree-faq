@@ -1,7 +1,7 @@
 class Spree::QuestionCategory < ActiveRecord::Base
   acts_as_list
 
-  has_many :questions
+  has_many :questions, class_name: 'Spree::Question'
 
   validates_uniqueness_of :name
   validates :name, presence: true

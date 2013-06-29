@@ -1,13 +1,9 @@
-module Spree
-  module Admin
-    class QuestionCategoriesController < ResourceController
-      def new
-        @question_category = @object
-      end
+class Spree::Admin::QuestionCategoriesController < Spree::Admin::ResourceController
+  def new
+    @question_category = @object
+  end
 
-      def edit
-        @question_category = @object
-      end
-    end
+  def edit
+    @question_category = @object
   end
 end

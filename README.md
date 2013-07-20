@@ -51,7 +51,7 @@ Copyright (c) 2013 Josh Nussbaum, released under the [New BSD License][3]
 
 [1]: http://www.fsf.org/licensing/essays/free-sw.html
 [2]: https://github.com/futhr/spree-faq/issues
-[3]: https://github.com/futhr/spree-faq/tree/master/LICENSE
+[3]: https://github.com/futhr/spree-faq/tree/master/LICENSE.md
 [4]: http://www.localeapp.com/projects/5165
 [5]: https://github.com/thoughtbot/guides
 

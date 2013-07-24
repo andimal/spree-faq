@@ -8,8 +8,7 @@ describe Spree::QuestionCategory do
 
   context "instance attributes" do
     it "create a new instance given valid attributes" do
-      pending "undefined method `stringify_keys'"
-      Spree::QuestionCategory.create! valid_attributes
+      Spree::QuestionCategory.create!(name: valid_attributes.name )
     end
   end
 

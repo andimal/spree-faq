@@ -4,6 +4,5 @@ class Spree::Question < ActiveRecord::Base
   belongs_to :question_category, class_name: 'Spree::QuestionCategory'
 
   validates :question_category_id, :question, :answer, presence: true
-
-  attr_accessible :question_id, :question, :answer
+  attr_accessible :question_category_id, :question, :answer
 end

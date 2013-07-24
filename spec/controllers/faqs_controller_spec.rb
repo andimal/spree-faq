@@ -19,10 +19,10 @@ describe Spree::FaqsController do
     end
   end
 
-  # context "#default_title" do
-  #   specify do
-  #     spree_get :default_title
-  #     response.should render_template(text: Spree.t(:frequently_asked_questions))
-  #   end
-  # end
+  context "#default_title" do
+      it "should return default title"do
+      faq_title = Spree::FaqsController.new
+      subject.default_title.should eq Spree.t(:frequently_asked_questions)
+      end
+  end
 end

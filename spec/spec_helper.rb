@@ -10,7 +10,6 @@ if ENV['COVERAGE']
     add_group 'Controllers', 'app/controllers'
     add_group 'Overrides', 'app/overrides'
     add_group 'Models', 'app/models'
-    add_group 'Views', 'app/views'
     add_group 'Libraries', 'lib'
   end
 end

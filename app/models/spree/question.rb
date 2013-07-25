@@ -5,5 +5,5 @@ class Spree::Question < ActiveRecord::Base
 
   validates :question_category_id, :question, :answer, presence: true
 
-  attr_accessible :question_id, :question, :answer
+  attr_accessible :question_category_id, :question, :answer
 end

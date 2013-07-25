@@ -17,7 +17,6 @@ describe Spree::Question do
 
   context "instance attributes" do
     it "create a new instance given valid attributes" do
-      #pending "undefined method `stringify_keys'"
       Spree::Question.create!(question:valid_attributes.question, answer:valid_attributes.answer, question_category_id: valid_attributes.question_category_id)
     end
   end

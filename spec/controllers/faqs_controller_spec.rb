@@ -20,13 +20,9 @@ describe Spree::FaqsController do
   end
 
   context "#default_title" do
-
-    it "should return default title"do
-
+      it "should return default title"do
       faq_title = Spree::FaqsController.new
-      faq_title.default_title.should == Spree.t(:frequently_asked_questions)
-
-    end
-
+      subject.default_title.should eq Spree.t(:frequently_asked_questions)
+      end
   end
 end

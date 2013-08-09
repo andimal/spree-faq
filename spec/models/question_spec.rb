@@ -7,62 +7,62 @@ describe Spree::Question do
 
   subject { question }
 
-  context "factory" do
+  context 'factory' do
     subject { valid_attributes }
 
-    it "is valid" do
+    it 'is valid' do
       subject.valid?.should be_true, subject.errors.full_messages.join(',')
     end
   end
 
-  context "instance attributes" do
-    it "create a new instance given valid attributes" do
+  context 'instance attributes' do
+    it 'create a new instance given valid attributes' do
       Spree::Question.create!(question: valid_attributes.question,
                               answer: valid_attributes.answer,
                               question_category_id: valid_attributes.question_category_id)
     end
   end
 
-  context "relation" do
+  context 'relation' do
     it { should belong_to(:question_category) }
 
-    it "belong to a category" do
+    it 'belong to a category' do
       subject.question_category.should_not be_nil
     end
   end
 
-  context "validation" do
+  context 'validation' do
     it { should validate_presence_of(:question_category_id) }
     it { should validate_presence_of(:question) }
     it { should validate_presence_of(:answer) }
 
-    it "require a category" do
+    it 'require a category' do
       invalid_question = build(:question, question_category: nil)
       invalid_question.should have(1).error_on(:question_category_id)
     end
 
-    it "require a question" do
+    it 'require a question' do
       invalid_question = build(:question, question: nil)
       invalid_question.should have(1).error_on(:question)
     end
 
-    it "require a answer" do
+    it 'require a answer' do
       invalid_question = build(:question, answer: nil)
       invalid_question.should have(1).error_on(:answer)
     end
   end
 
-  context "mass asignment" do
+  context 'mass asignment' do
     it { should_not allow_mass_assignment_of(:updated_at) }
     it { should_not allow_mass_assignment_of(:created_at) }
   end
 
-  context "acts as list" do
+  context 'acts as list' do
     before do
       2.times { create(:question) }
     end
 
-    it "can have its position changed" do
+    it 'can have its position changed' do
       subject.move_to_bottom
       subject.position.should eq(3)
     end

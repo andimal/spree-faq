@@ -6,7 +6,7 @@ describe Spree::FaqsController do
 
   before { controller.stub spree_current_user: nil }
 
-  context "#index" do
+  context '#index' do
     specify do
       Spree::QuestionCategory.should_receive(:all).and_return(:categories)
       spree_get :index
@@ -16,8 +16,8 @@ describe Spree::FaqsController do
     end
   end
 
-  context "#default_title" do
-    it "return default title" do
+  context '#default_title' do
+    it 'return default title' do
       subject.default_title.should eq Spree.t(:frequently_asked_questions)
     end
   end

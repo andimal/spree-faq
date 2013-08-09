@@ -1,5 +1,6 @@
-#questions {
-}
+/*
+ *= require store/spree_frontend
+*/
 
 #questions .question {
   margin-bottom: 1em;

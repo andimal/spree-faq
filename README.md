@@ -54,4 +54,4 @@ Copyright (c) 2013 [Josh Nussbaum][6] and [contributors][7], released under the 
 [4]: http://www.localeapp.com/projects/5165
 [5]: https://github.com/thoughtbot/guides
 [6]: https://github.com/joshnuss
-[7]: https://github.com/futhr/contributors
+[7]: https://github.com/futhr/spree-faq/contributors

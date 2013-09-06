@@ -6,20 +6,20 @@ describe Spree::Admin::QuestionCategoriesController do
   let!(:user) { create(:user) }
   let!(:question_category) { create(:question_category) }
   let!(:question) { create(:question, question_category: question_category) }
-  let (:valid_attributes) { attributes_for(:question_category) }
+  let (:attributes) { attributes_for(:question_category) }
 
   before { controller.stub spree_current_user: user }
 
   context 'controller instance' do
     it 'use Admin::QuestionCategoriesController' do
-      controller.should be_an_instance_of Spree::Admin::QuestionCategoriesController
+      expect(controller).to be_an_instance_of Spree::Admin::QuestionCategoriesController
     end
   end
 
   context '#index' do
     specify do
       spree_get :index
-      response.should render_template :index
+      expect(response).to render_template :index
     end
   end
 
@@ -41,12 +41,12 @@ describe Spree::Admin::QuestionCategoriesController do
     context 'with valid params' do
       it 'creates a new Spree::QuestionCategory' do
         expect {
-          spree_post :create, question_category: valid_attributes
+          spree_post :create, question_category: attributes
         }.to change(Spree::QuestionCategory, :count).by(1)
       end
 
       it 'assigns a newly created question_category as @question_category' do
-        spree_post :create, question_category: valid_attributes
+        spree_post :create, question_category: attributes
         assigns(:question_category).should be_a Spree::QuestionCategory
         assigns(:question_category).should be_persisted
       end

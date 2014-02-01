@@ -52,11 +52,6 @@ describe Spree::Question do
     end
   end
 
-  context 'mass asignment' do
-    it { should_not allow_mass_assignment_of(:updated_at) }
-    it { should_not allow_mass_assignment_of(:created_at) }
-  end
-
   context 'acts as list' do
     before do
       2.times { create(:question) }

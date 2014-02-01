@@ -1,12 +1,17 @@
 module Spree
   module Admin
     class QuestionCategoriesController < ResourceController
-      def new
-        @question_category = @object
+      before_filter :question_category, only: [:new, :edit]
+
+      private
+
+      def question_category
+        @question_category ||= @object
       end
 
-      def edit
-        @question_category = @object
+      def question_category_params
+        params.require(:question_category).permit(:questions_attributes, :question, :answer,
+                       question: [:question_category_id, :question, :answer])
       end
     end
   end

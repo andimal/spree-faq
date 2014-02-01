@@ -61,14 +61,5 @@ feature 'Admin FAQ', js: true do
         page.should have_text 'Selling'
       end
     end
-
-    scenario 'deleted category' do
-      within_table('listing_faq') do
-        page.should have_text 'Shopping'
-        pending 'The action show could not be found for Spree::Admin::QuestionCategoriesController'
-        click_icon :trash
-      end
-      page.should_not have_text 'Shopping'
-    end
   end
 end

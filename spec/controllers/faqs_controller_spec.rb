@@ -8,10 +8,14 @@ describe Spree::FaqsController do
 
   context '#index' do
     specify do
-      Spree::QuestionCategory.should_receive(:all).and_return(:categories)
-      spree_get :index
+      categories = [
+        question_category,
+        create(:question_category),
+        create(:question_category)
+      ]
 
-      assigns(:categories).should eql :categories
+      spree_get :index
+      assigns(:categories).should eq categories
       response.should be_success
     end
   end

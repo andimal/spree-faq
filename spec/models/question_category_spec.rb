@@ -14,7 +14,7 @@ describe Spree::QuestionCategory do
 
   context 'factory' do
     it 'is valid' do
-      valid_attributes.valid?.should be_true, valid_attributes.errors.full_messages.join(',')
+      expect(build(:question_category).valid?).to be_true
     end
   end
 
@@ -33,11 +33,6 @@ describe Spree::QuestionCategory do
     it 'is invalid without a name' do
       build(:question_category, name: nil).should_not be_valid
     end
-  end
-
-  context 'mass asignment' do
-    it { should_not allow_mass_assignment_of(:updated_at) }
-    it { should_not allow_mass_assignment_of(:created_at) }
   end
 
   context 'acts as list' do

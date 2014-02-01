@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def up
     create_table :spree_questions do |t|
-      t.integer :question_category_id
+      t.belongs_to :question_category
       t.text    :question
       t.text    :answer
       t.integer :position

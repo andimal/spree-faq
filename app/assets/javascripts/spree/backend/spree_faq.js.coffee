@@ -1,3 +1,5 @@
+#= require spree/backend
+
 (($) ->
   $('form').on 'click', '.add_fields', ->
     time = new Date().getTime()
@@ -12,7 +14,7 @@
 
   $('#new_question_link').on 'click', ->
     $('#questions').append(new_question_html.replace(/NEW_RECORD/g, $('#questions .question').size()))
-    $('#questions .question:last .remove').click ->
+    $('#questions .question:last .remove').on 'click', ->
       $(this).parent('.question').remove()
 
     $.scrollTo($('#questions .question:last'), 800)

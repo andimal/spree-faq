@@ -1,8 +1,8 @@
 # Spree Frequently Asked Question
 
-[![Build Status](https://secure.travis-ci.org/futhr/spree-faq.png?branch=2-0-stable)](http://travis-ci.org/futhr/spree-faq)
+[![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=master)](https://travis-ci.org/futhr/spree-faq)
 [![Dependency Status](https://gemnasium.com/futhr/spree-faq.png)](https://gemnasium.com/futhr/spree-faq)
-[![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree-faq)
+[![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=master)](https://coveralls.io/r/futhr/spree-faq)
 
 An spree extension for managing FAQs.
 
@@ -11,7 +11,7 @@ An spree extension for managing FAQs.
 In your `Gemfile`
 
 ```ruby
-gem 'spree_faq', github: 'futhr/spree-faq', branch: '2-0-stable'
+gem 'spree_faq', github: 'futhr/spree-faq', branch: 'master'
 ```
 
 Then run from the command line:
@@ -46,12 +46,12 @@ Starting point:
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2013 [Josh Nussbaum][6] and [contributors][7], released under the [New BSD License][3]
+Copyright (c) 2014 [Josh Nussbaum][6] and [contributors][7], released under the [New BSD License][3]
 
 [1]: http://www.fsf.org/licensing/essays/free-sw.html
 [2]: https://github.com/futhr/spree-faq/issues
-[3]: https://github.com/futhr/spree-faq/blob/2-0-stable/LICENSE.md
+[3]: https://github.com/futhr/spree-faq/blob/master/LICENSE.md
 [4]: http://www.localeapp.com/projects/5165
 [5]: https://github.com/thoughtbot/guides
 [6]: https://github.com/joshnuss
-[7]: https://github.com/futhr/spree-faq/contributors
+[7]: https://github.com/futhr/spree-faq/graphs/contributors

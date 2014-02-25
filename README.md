@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/futhr/spree-faq.png?branch=master)](https://travis-ci.org/futhr/spree-faq)
 [![Dependency Status](https://gemnasium.com/futhr/spree-faq.png)](https://gemnasium.com/futhr/spree-faq)
 [![Coverage Status](https://coveralls.io/repos/futhr/spree-faq/badge.png?branch=master)](https://coveralls.io/r/futhr/spree-faq)
+[![Code Climate](https://codeclimate.com/github/futhr/spree-faq.png)](https://codeclimate.com/github/futhr/spree-faq)
+[![Gitter chat](https://badges.gitter.im/futhr/spree-faq.png)](https://gitter.im/futhr/spree-faq)
 
 An spree extension for managing FAQs.
 

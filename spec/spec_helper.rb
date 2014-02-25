@@ -1,17 +1,15 @@
-if ENV['CI']
-  require 'simplecov'
-  require 'coveralls'
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
-  SimpleCov.start do
-    add_filter '/spec/'
-    add_group 'Controllers', 'app/controllers'
-    add_group 'Overrides', 'app/overrides'
-    add_group 'Models', 'app/models'
-    add_group 'Libraries', 'lib'
-  end
+require 'simplecov'
+require 'coveralls'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start do
+  add_filter '/spec/'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Overrides', 'app/overrides'
+  add_group 'Models', 'app/models'
+  add_group 'Libraries', 'lib'
 end
 
 ENV['RAILS_ENV'] = 'test'
@@ -59,5 +57,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  Capybara.javascript_driver = :poltergeist if ENV['CI']
+  Capybara.javascript_driver = :poltergeist
 end

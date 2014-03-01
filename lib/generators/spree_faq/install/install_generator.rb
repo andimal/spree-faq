@@ -3,18 +3,6 @@ module SpreeFaq
     class InstallGenerator < Rails::Generators::Base
       class_option :auto_run_migrations, type: :boolean, default: false
 
-      def add_devise_config
-        # Silences Devise warnings
-        create_file 'config/initializers/devise.rb',
-          %Q{Devise.secret_key = 'fake' * 10}
-      end
-
-      def add_i18n_config
-        # Silences i18n warnings
-        create_file 'config/initializers/i18n.rb',
-          %Q{I18n.enforce_available_locales = false}
-      end
-
       def add_javascripts
         append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/spree_faq\n"
         append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/spree_faq\n"

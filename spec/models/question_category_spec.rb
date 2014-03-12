@@ -22,7 +22,7 @@ describe Spree::QuestionCategory do
     it { should have_many(:questions) }
 
     it 'have questions' do
-      subject.questions.should_not be_nil
+      expect(subject.questions).not_to be_nil
     end
   end
 
@@ -31,7 +31,7 @@ describe Spree::QuestionCategory do
     it { should validate_uniqueness_of(:name) }
 
     it 'is invalid without a name' do
-      build(:question_category, name: nil).should_not be_valid
+      expect(build(:question_category, name: nil)).not_to be_valid
     end
   end
 
@@ -42,7 +42,7 @@ describe Spree::QuestionCategory do
 
     it 'can have its position changed' do
       subject.move_to_bottom
-      subject.position.should eq(3)
+      expect(subject.position).to eq(3)
     end
   end
 end

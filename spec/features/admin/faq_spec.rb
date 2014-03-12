@@ -11,7 +11,7 @@ feature 'Admin FAQ', js: true do
   end
 
   scenario 'have faq tab in configuration sidebar' do
-    page.should have_text 'FAQ'
+    expect(page).to have_text 'FAQ'
   end
 
   context 'create new category' do
@@ -24,13 +24,13 @@ feature 'Admin FAQ', js: true do
       fill_in 'Name', with: 'Shopping'
       click_button 'Create'
       within_table('listing_faq') do
-        page.should have_text 'Shopping'
+        expect(page).to have_text 'Shopping'
       end
     end
 
     scenario 'error when empty name' do
       click_button 'Create'
-      page.should have_text 'Name can\'t be blank'
+      expect(page).to have_text 'Name can\'t be blank'
     end
   end
 
@@ -49,16 +49,16 @@ feature 'Admin FAQ', js: true do
 
     scenario 'update category' do
       within_table('listing_faq') do
-        page.should have_text 'Shopping'
+        expect(page).to have_text 'Shopping'
         click_icon :edit
       end
-      page.should have_text 'Editing Category Questions'
+      expect(page).to have_text 'Editing Category Questions'
 
       fill_in 'Category Name', with: 'Selling'
       click_button 'Update'
 
       within_table 'listing_faq' do
-        page.should have_text 'Selling'
+        expect(page).to have_text 'Selling'
       end
     end
   end

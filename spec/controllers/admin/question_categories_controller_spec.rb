@@ -26,14 +26,14 @@ describe Spree::Admin::QuestionCategoriesController do
   context '#new' do
     before { spree_get :new }
 
-    it { assigns(:question_category).should be_a_new Spree::QuestionCategory }
-    it { response.should render_template :new }
+    it { expect(assigns(:question_category)).to be_a_new Spree::QuestionCategory }
+    it { expect(response).to render_template :new }
   end
 
   context '#edit' do
     before { spree_get :edit, id: question_category }
 
-    it { assigns(:question_category).should eq question_category }
+    it { expect(assigns(:question_category)).to eq question_category }
     it { response.should render_template :edit }
   end
 
@@ -47,8 +47,8 @@ describe Spree::Admin::QuestionCategoriesController do
 
       it 'assigns a newly created question_category as @question_category' do
         spree_post :create, question_category: attributes
-        assigns(:question_category).should be_a Spree::QuestionCategory
-        assigns(:question_category).should be_persisted
+        expect(assigns(:question_category)).to be_a Spree::QuestionCategory
+        expect(assigns(:question_category)).to be_persisted
       end
     end
   end

@@ -15,14 +15,14 @@ describe Spree::FaqsController do
       ]
 
       spree_get :index
-      assigns(:categories).should eq categories
-      response.should be_success
+      expect(assigns(:categories)).to eq categories
+      expect(response).to be_success
     end
   end
 
   context '#default_title' do
     it 'return default title' do
-      subject.default_title.should eq Spree.t(:frequently_asked_questions)
+      expect(subject.default_title).to eq Spree.t(:frequently_asked_questions)
     end
   end
 end

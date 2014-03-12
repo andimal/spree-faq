@@ -11,7 +11,7 @@ describe Spree::Question do
     subject { valid_attributes }
 
     it 'is valid' do
-      subject.valid?.should be_true, subject.errors.full_messages.join(',')
+      expect(subject.valid?).to be_true, subject.errors.full_messages.join(',')
     end
   end
 
@@ -27,7 +27,7 @@ describe Spree::Question do
     it { should belong_to(:question_category) }
 
     it 'belong to a category' do
-      subject.question_category.should_not be_nil
+      expect(subject.question_category).not_to be_nil
     end
   end
 
@@ -38,17 +38,17 @@ describe Spree::Question do
 
     it 'require a category' do
       invalid_question = build(:question, question_category: nil)
-      invalid_question.should have(1).error_on(:question_category_id)
+      expect(invalid_question).to have(1).error_on(:question_category_id)
     end
 
     it 'require a question' do
       invalid_question = build(:question, question: nil)
-      invalid_question.should have(1).error_on(:question)
+      expect(invalid_question).to have(1).error_on(:question)
     end
 
     it 'require a answer' do
       invalid_question = build(:question, answer: nil)
-      invalid_question.should have(1).error_on(:answer)
+      expect(invalid_question).to have(1).error_on(:answer)
     end
   end
 
@@ -59,7 +59,7 @@ describe Spree::Question do
 
     it 'can have its position changed' do
       subject.move_to_bottom
-      subject.position.should eq(3)
+      expect(subject.position).to eq(3)
     end
   end
 end

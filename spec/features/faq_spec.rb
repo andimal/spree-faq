@@ -15,15 +15,15 @@ feature 'FAQ', js: true do
   end
 
   scenario 'have all elements' do
-    page.should have_text Spree.t(:frequently_asked_questions)
-    page.should have_text 'Shopping'
-    page.should have_text 'Do you sell stuff?'
+    expect(page).to have_text Spree.t(:frequently_asked_questions)
+    expect(page).to have_text 'Shopping'
+    expect(page).to have_text 'Do you sell stuff?'
   end
 
   context 'when click on question' do
     scenario 'show answer' do
       click_link 'Do you sell stuff?'
-      page.should have_text 'Think so..'
+      expect(page).to have_text 'Think so..'
     end
   end
 end

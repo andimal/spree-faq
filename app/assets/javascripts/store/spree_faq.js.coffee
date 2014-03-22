@@ -1,4 +1,4 @@
-#= require spree/frontend
+#= require store
 
 (($) ->
   $('.answer').hide()

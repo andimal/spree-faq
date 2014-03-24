@@ -10,7 +10,7 @@ module Spree
       end
 
       def question_category_params
-        params.require(:question_category).permit(:questions_attributes, :question, :answer,
+        params.require(:question_category).permit(:questions_attributes, :question, :answer, :permalink,
                        question: [:question_category_id, :question, :answer])
       end
     end

@@ -4,6 +4,7 @@ class Spree::QuestionCategory < ActiveRecord::Base
   has_many :questions, class_name: 'Spree::Question'
 
   validates :name, presence: true, uniqueness: true
+  validates :permalink, presence: true, uniqueness: true
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 end

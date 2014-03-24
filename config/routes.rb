@@ -4,4 +4,5 @@ Spree::Core::Engine.add_routes do
     resources :questions
   end
   get 'faq', to: 'faqs#index'
+  get 'faq/:category', to: 'faqs#index'
 end

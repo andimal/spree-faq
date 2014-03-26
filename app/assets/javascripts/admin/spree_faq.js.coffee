@@ -1,5 +1,3 @@
-#= require admin/spree_faq
-
 $ ->
   $('form').on 'click', '.add_fields', ->
     time = new Date().getTime()

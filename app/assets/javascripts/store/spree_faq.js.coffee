@@ -1,5 +1,3 @@
-#= require store
-
 (($) ->
   $('.answer').hide()
   $('.question').on 'click', ->

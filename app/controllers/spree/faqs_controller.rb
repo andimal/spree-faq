@@ -5,11 +5,13 @@ module Spree
     def index
       @categories = QuestionCategory.includes(:questions).order(position: :asc).load
 
-      if params[:category].present?
-        @category = QuestionCategory.where("permalink = ?", params[:category]).first
-      else
-        @category = QuestionCategory.where("position = ?", 1).first
-        params[:category] = @category.permalink
+      if @categories.present?
+        if params[:category].present?
+          @category = QuestionCategory.where("permalink = ?", params[:category]).first
+        else
+          @category = QuestionCategory.where("position = ?", 1).first
+          params[:category] = @category.permalink
+        end
       end
     end
 
